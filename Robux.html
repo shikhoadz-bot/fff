@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Robux Generator</title>
+  <style>
+    body {
+      background: black;
+      color: lime;
+      font-family: Arial;
+      text-align: center;
+      padding-top: 100px;
+    }
+    #bar {
+      width: 0%;
+      height: 30px;
+      background: lime;
+    }
+    #progress {
+      width: 80%;
+      background: #333;
+      margin: auto;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>💰 Free Robux Generator 💰</h1>
+<p>Generating 10,000 Robux...</p>
+
+<div id="progress">
+  <div id="bar"></div>
+</div>
+
+<p id="percent">0%</p>
+
+<script>
+let width = 0;
+let interval = setInterval(frame, 50);
+
+function frame() {
+  if (width >= 100) {
+    clearInterval(interval);
+    document.body.innerHTML = `
+      <h1>😂 PRANKED!</h1>
+      <p>No free Robux bro!</p>
+      <p>Chal treat de ab 😎</p>
+    `;
+  } else {
+    width++;
+    document.getElementById("bar").style.width = width + "%";
+    document.getElementById("percent").innerText = width + "%";
+  }
+}
+</script>
+
+</body>
+</html>
